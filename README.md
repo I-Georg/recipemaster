@@ -22,3 +22,10 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+* STUFF INSTALLED
+webpacker
+leaflet
+jquery
+highcharts
+
