@@ -1,0 +1,2 @@
+class Interection < ApplicationRecord
+end
