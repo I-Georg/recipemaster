@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_11_132705) do
+ActiveRecord::Schema.define(version: 2019_10_11_134441) do
+
+  create_table "interections", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "recipe_id"
+    t.text "date"
+    t.integer "rating"
+    t.text "review"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "recipes", force: :cascade do |t|
     t.text "name"
@@ -26,16 +36,6 @@ ActiveRecord::Schema.define(version: 2019_10_11_132705) do
     t.text "ingredients"
     t.integer "n_ingredients"
     t.integer "rec"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "interections", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "recipe_id"
-    t.text "date"
-    t.integer "rating"
-    t.text "review"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
