@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :interections
   resources :recipes
   get 'recipemaster/index'
   root 'recipemaster#index'

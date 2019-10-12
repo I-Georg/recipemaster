@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Interections</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Recipe</th>
+      <th>Date</th>
+      <th>Rating</th>
+      <th>Review</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @interections.each do |interection| %>
+      <tr>
+        <td><%= interection.user_id %></td>
+        <td><%= interection.recipe_id %></td>
+        <td><%= interection.date %></td>
+        <td><%= interection.rating %></td>
+        <td><%= interection.review %></td>
+        <td><%= link_to 'Show', interection %></td>
+        <td><%= link_to 'Edit', edit_interection_path(interection) %></td>
+        <td><%= link_to 'Destroy', interection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Interection', new_interection_path %>
