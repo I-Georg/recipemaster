@@ -1,12 +1,12 @@
 require 'csv'
-namespace :recipies do
+namespace :recipes do
   desc "pull recipies into DB"
-  task seed_recipies: :environment do
- 	Deployment.destroy_all
+  task seed_recipes: :environment do
+ 	Recipe.destroy_all
 	CSV.foreach("lib/assets/RAW_recipes.csv", :headers =>true) do |row |
       puts row.inspect #just so that we know the file's being read
       #create new model instances with the data
-      Deployment.create!(
+      Recipe.create!(
       name: row[0],
       recipe_id: row[1].to_i,
       minutes: row[2].to_i,
