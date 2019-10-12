@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_11_134441) do
+ActiveRecord::Schema.define(version: 2019_10_12_220502) do
 
   create_table "interections", force: :cascade do |t|
     t.integer "user_id"
@@ -36,6 +36,14 @@ ActiveRecord::Schema.define(version: 2019_10_11_134441) do
     t.text "ingredients"
     t.integer "n_ingredients"
     t.integer "rec"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.integer "user_id"
+    t.text "name"
+    t.text "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
