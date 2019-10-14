@@ -21,8 +21,6 @@ namespace :recipes do
       n_ingredients: row[11].to_i,
       rec: row[12].to_i
     )
-    if row > 3000
-      break
     end
   end
 end

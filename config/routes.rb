@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :users
   get 'recipemaster/index'
   root 'recipemaster#index'
   get "/dashboard" => "dashboard#index"
