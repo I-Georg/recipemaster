@@ -1,11 +1,12 @@
 class DashboardController < ApplicationController
-  def show
-    render template: "dashboard/index"
+  def index
+
     @recipes = Recipe.all
     @interactions = Interection.all
     @users = User.all
 
-    @top10tags = Recipe.all.
-
+    @recipescount = Recipe.all.count
+    @interactionscount = Interection.all.count
+    @userscount = User.all.count
   end
 end

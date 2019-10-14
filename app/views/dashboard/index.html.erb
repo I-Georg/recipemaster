@@ -1,56 +1,26 @@
-
 <div id = 'container'></div>
-
-<%= @top10tags %>
 
 <script>
   Highcharts.chart('container', {
-      chart: {
-          plotBackgroundColor: null,
-          plotBorderWidth: null,
-          plotShadow: false,
-          type: 'pie'
-      },
-      title: {
-          text: 'Total number of recipes by tag'
-      },
-      tooltip: {
-          pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-      },
-      plotOptions: {
-          pie: {
-              allowPointSelect: true,
-              cursor: 'pointer',
-              dataLabels: {
-                  enabled: false
-              },
-              showInLegend: true
-          }
-      },
-      series: [{
-          name: 'Tag',
-          colorByPoint: true,
-          data: [{
-              name: 'Chrome',
-              y: ,
-              sliced: true,
-              selected: true
-          }, {
-              name: 'Internet Explorer',
-              y: 11.84
-          }, {
-              name: 'Firefox',
-              y: 10.85
-          }, {
-              name: 'Edge',
-              y: 4.67
-          }, {
-              name: 'Safari',
-              y: 4.18
-          }, {
-              name: 'Other',
-              y: 7.05
-          }]
-      }]
-  });
-  </script>
+    chart: {
+          type: 'bar'
+        },
+        title: {
+          text: 'Database Statistics'
+        },
+        xAxis: {
+          categories: ['Recipes', 'Interactions', 'Users']
+        },
+        yAxis: {
+          title: {
+            text: 'Number of Records'
+          },
+          tickInterval: 1000,
+        },
+        series: [{
+          name: 'Number of Records',
+          data: [<%= raw @userscount%>, <%= raw @recipescount %>, <%= raw @interactionscount%>]
+        }]
+        });
+      });
+    </script>
