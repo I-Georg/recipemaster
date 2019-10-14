@@ -10,7 +10,7 @@ namespace :recipes do
       name: row[0],
       recipe_id: row[1].to_i,
       minutes: row[2].to_i,
-      contributor_id: row[3].to_i,
+      user_id: row[3].to_i,
       submitted: row[4],
       tags: row[5],
       nutrition: row[6],
@@ -21,6 +21,8 @@ namespace :recipes do
       n_ingredients: row[11].to_i,
       rec: row[12].to_i
     )
+    if row > 3000
+      break
     end
   end
 end

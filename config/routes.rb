@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   resources :users
-  resources :interections
-  resources :recipes
   get 'recipemaster/index'
   root 'recipemaster#index'
   get "/dashboard" => "dashboard#index"
