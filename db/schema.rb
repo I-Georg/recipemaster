@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 2019_10_14_210910) do
     t.text "description"
     t.text "ingredients"
     t.integer "n_ingredients"
-    t.integer "rec"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

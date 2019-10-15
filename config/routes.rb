@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :interactions
   resources :recipes, param: :recipe_id
   get 'recipemaster/index'
   root 'recipemaster#index'
