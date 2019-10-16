@@ -1,0 +1,93 @@
+<div id = 'container'></div>
+<div id="user-chart" data-dates="<%= @user_dates.to_json %>" data-counts="<%= @user_counts %>"></div>
+<div id="recipe-chart" data-hours="<%= @recipe_hours.to_json %>" data-counts="<%= @recipe_counts %>"></div>
+
+<script>
+  $(document).on('turbolinks:load', function() {
+    var userChart = Echarts.init(document.getElementById('user-chart'));
+    var user_dates = $('#user-chart').data('dates');
+    var user_counts = $('#user-chart').data('counts');
+
+    option = {
+      title: {
+                text: 'User created date'
+              },
+      xAxis: {
+          type: 'category',
+          data: user_dates
+      },
+      yAxis: {
+          type: 'value'
+      },
+      series: [{
+          data: user_counts,
+          type: 'bar'
+      }]
+    };
+    userChart.setOption(option)
+
+
+    var recipeChart = Echarts.init(document.getElementById('recipe-chart'));
+    var recipe_dates = $('#recipe-chart').data('hours');
+    var recipe_counts = $('#recipe-chart').data('counts');
+
+    option = {
+      title: {
+                text: 'Movie total playing time'
+              },
+      xAxis: {
+          type: 'category',
+          data: recipe_dates
+      },
+      yAxis: {
+          type: 'value'
+      },
+      series: [{
+          data: recipe_counts,
+          type: 'bar'
+      }]
+    };
+    recipeChart.setOption(option)
+  })
+  
+
+
+
+
+
+
+
+
+
+
+
+    // Highcharts.chart('container', {
+    //   chart: {
+    //         type: 'bar'
+    //       },
+    //       title: {
+    //         text: 'Database Statistics'
+    //       },
+    //       xAxis: {
+    //         categories: ['Recipes', 'Interactions', 'Users']
+    //       },
+    //       yAxis: {
+    //         title: {
+    //           text: 'Number of Records'
+    //         },
+    //         tickInterval: 1000,
+    //       },
+    //       series: [{
+    //         name: 'Number of Records',
+    //         data: [<%#= raw @userscount%>, <%#= raw @recipescount %>, <#%= raw @interactionscount%>]
+    //       }]
+    //       })
+    </script>
+
+    <style type="text/css">
+      #user-chart, #recipe-chart {
+        height: 400px;
+        width: 100%;
+        margin-top: 40px;
+      }
+    </style>
