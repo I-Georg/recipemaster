@@ -1,12 +1,11 @@
 require 'csv'
-namespace :recipe_test do
-  desc "seeding recipe table with 200 records for testing purposes"	
-  task recipe: :environment do
-Recipe.destroy_all	
+namespace :recipes_test do
+  desc "seeding recipe table with 200 records for testing purposes"
+  task recipes: :environment do
+Recipe.destroy_all
 CSV.foreach("lib/assets/RAW_recipes.csv", :headers =>true) do |row |
       puts row.inspect #just so that we know the file's being read
       #create new model instances with the data
-
 Recipe.create!(
       name: row[0],
       recipe_id: row[1].to_i,

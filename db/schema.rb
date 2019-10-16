@@ -10,26 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_14_210910) do
-
-  create_table "interactions", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "original_recipe_id"
-    t.text "date"
-    t.integer "rating"
-    t.text "review"
-    t.integer "rec"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "recipe_id"
-    t.index ["recipe_id"], name: "index_interactions_on_recipe_id"
-  end
+ActiveRecord::Schema.define(version: 2019_10_15_095306) do
 
   create_table "recipes", force: :cascade do |t|
     t.text "name"
-    t.integer "original_recipe_id"
     t.integer "minutes"
-    t.integer "user_id"
     t.text "submitted"
     t.text "tags"
     t.text "nutrition"
@@ -38,9 +23,19 @@ ActiveRecord::Schema.define(version: 2019_10_14_210910) do
     t.text "description"
     t.text "ingredients"
     t.integer "n_ingredients"
+    t.integer "contributor_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["contributor_id"], name: "index_recipes_on_contributor_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.text "name"
+    t.decimal "lat"
+    t.decimal "lng"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "interactions", "recipes"
+  add_foreign_key "recipes", "users", column: "contributor_id"
 end
