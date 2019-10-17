@@ -8,6 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("jquery")
+require("echarts")
 //require("jqcloud")
 import './jqcloud-1.0.4.js'
 
@@ -15,6 +16,8 @@ import Highcharts from "highcharts"
 window.Highcharts = Highcharts
 import '../stylesheets/application'
 import './bootstrap_custom.js'
+import Echarts from 'echarts'
+window.Echarts = Echarts
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

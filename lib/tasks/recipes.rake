@@ -41,3 +41,4 @@ namespace :recipes do
     p 'Recipes imported'
   end
 end
+end
