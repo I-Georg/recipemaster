@@ -1,7 +1,8 @@
 Welcome to Recipe Master
 
 <%= form_tag('/', method: :get) do%>
-<%= text_field_tag(:search, params[:search])%>
+<%=text_field_tag 'search', nil, placeholder:'Search recipes by name'%>
+
 <%= submit_tag ('Search')%>
 <%end%>
 
