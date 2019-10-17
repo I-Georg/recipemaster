@@ -1,0 +1,72 @@
+<h1>Get inspired by these fancy cocktail ideas</h1>
+<h2>Refresh the page to see another random selection</h2>
+
+
+
+
+
+
+<b><%=@response1.body["drinks"][0]["strDrink"]%></b><br> <!--parsed json has a single key drinks that has one array -->
+<img src="<%=@response1.body["drinks"][0]["strDrinkThumb"]%>" />
+
+
+<!-- response.body reference
+
+
+[{
+  "idDrink" => "12768",
+  "strDrink" => "Frappé",
+  "strDrinkAlternate" => nil,
+  "strDrinkES" => nil,
+  "strDrinkDE" => nil,
+  "strDrinkFR" => nil,
+  "strDrinkZH-HANS" => nil,
+  "strDrinkZH-HANT" => nil,
+  "strTags" => nil,
+  "strVideo" => nil,
+  "strCategory" => "Coffee / Tea",
+  "strIBA" => nil,
+  "strAlcoholic" => "Non alcoholic",
+  "strGlass" => "Highball Glass",
+  "strInstructions" => "Mix together. Blend at highest blender speed for about 1 minute. Pour into a glass and drink with a straw. Notes: This works best if everything is cold (if you make fresh coffee, mix it with the milk and let it sit in the fridge for 1/2 hour. If it is not frothy, add more milk, or even just some more milk powder. The froth gradually turns to liquid at the bottom of the glass, so you will find that you can sit and drink this for about 1/2 hour, with more iced coffee continually appearing at the bottom. Very refreshing.",
+  "strInstructionsES" => nil,
+  "strInstructionsDE" => "Zusammenmischen. Mischen Sie mit höchster Mischgeschwindigkeit für ca. 1 Minute. In ein Glas gießen und mit einem Strohhalm trinken. Notizen: Dies funktioniert am besten, wenn alles kalt ist (wenn Sie frischen Kaffee zubereiten, mischen Sie ihn mit der Milch und lassen Sie ihn 1/2 Stunde im Kühlschrank stehen. Wenn es nicht schaumig ist, füge mehr Milch oder sogar nur etwas mehr Milchpulver hinzu. Der Schaum verwandelt sich allmählich in Flüssigkeit am Boden des Glases, so dass Sie feststellen werden, dass Sie sitzen und dieses etwa 1/2 Stunde lang trinken können, wobei immer mehr Eiskaffee am Boden auftaucht. Sehr erfrischend.",
+  "strInstructionsFR" => nil,
+  "strInstructionsZH-HANS" => nil,
+  "strInstructionsZH-HANT" => nil,
+  "strDrinkThumb" => "https://www.thecocktaildb.com/images/media/drink/vqwryq1441245927.jpg",
+  "strIngredient1" => "Coffee",
+  "strIngredient2" => "Milk",
+  "strIngredient3" => "Sugar",
+  "strIngredient4" => nil,
+  "strIngredient5" => nil,
+  "strIngredient6" => nil,
+  "strIngredient7" => nil,
+  "strIngredient8" => nil,
+  "strIngredient9" => nil,
+  "strIngredient10" => nil,
+  "strIngredient11" => nil,
+  "strIngredient12" => nil,
+  "strIngredient13" => nil,
+  "strIngredient14" => nil,
+  "strIngredient15" => nil,
+  "strMeasure1" => "1/2 cup black ",
+  "strMeasure2" => "1/2 cup ",
+  "strMeasure3" => "1-2 tsp ",
+  "strMeasure4" => nil,
+  "strMeasure5" => nil,
+  "strMeasure6" => nil,
+  "strMeasure7" => nil,
+  "strMeasure8" => nil,
+  "strMeasure9" => nil,
+  "strMeasure10" => nil,
+  "strMeasure11" => nil,
+  "strMeasure12" => nil,
+  "strMeasure13" => nil,
+  "strMeasure14" => nil,
+  "strMeasure15" => nil,
+  "strCreativeCommonsConfirmed" => "No",
+  "dateModified" => "2015-09-03 03:05:28"
+}]
+
+ -->
