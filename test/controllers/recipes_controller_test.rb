@@ -17,7 +17,7 @@ class RecipesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create recipe" do
     assert_difference('Recipe.count') do
-      post recipes_url, params: { recipe: { contributor_id: @recipe.contributor_id, description: @recipe.description, id: @recipe.id, ingredients: @recipe.ingredients, minutes: @recipe.minutes, n_ingredients: @recipe.n_ingredients, n_steps: @recipe.n_steps, name: @recipe.name, nutrition: @recipe.nutrition, rec: @recipe.rec, steps: @recipe.steps, submitted: @recipe.submitted, tags: @recipe.tags } }
+      post recipes_url, params: { recipe: { description: @recipe.description, id: @recipe.id, ingredients: @recipe.ingredients, minutes: @recipe.minutes, n_ingredients: @recipe.n_ingredients, n_steps: @recipe.n_steps, name: @recipe.name, nutrition: @recipe.nutrition, rec: @recipe.rec, steps: @recipe.steps, submitted: @recipe.submitted, tags: @recipe.tags, user_id: @recipe.user_id } }
     end
 
     assert_redirected_to recipe_url(Recipe.last)
@@ -34,7 +34,7 @@ class RecipesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update recipe" do
-    patch recipe_url(@recipe), params: { recipe: { contributor_id: @recipe.contributor_id, description: @recipe.description, id: @recipe.id, ingredients: @recipe.ingredients, minutes: @recipe.minutes, n_ingredients: @recipe.n_ingredients, n_steps: @recipe.n_steps, name: @recipe.name, nutrition: @recipe.nutrition, rec: @recipe.rec, steps: @recipe.steps, submitted: @recipe.submitted, tags: @recipe.tags } }
+    patch recipe_url(@recipe), params: { recipe: { description: @recipe.description, id: @recipe.id, ingredients: @recipe.ingredients, minutes: @recipe.minutes, n_ingredients: @recipe.n_ingredients, n_steps: @recipe.n_steps, name: @recipe.name, nutrition: @recipe.nutrition, rec: @recipe.rec, steps: @recipe.steps, submitted: @recipe.submitted, tags: @recipe.tags, user_id: @recipe.user_id } }
     assert_redirected_to recipe_url(@recipe)
   end
 

@@ -8,9 +8,9 @@ namespace :recipes do
       #create new model instances with the data
       Recipe.create!(
       name: row[0],
-      recipe_id: row[1].to_i,
+      original_recipe_id: row[1].to_i,
       minutes: row[2].to_i,
-      contributor_id: row[3].to_i,
+      user_id: row[3].to_i,
       submitted: row[4],
       tags: row[5],
       nutrition: row[6],
@@ -18,9 +18,11 @@ namespace :recipes do
       steps: row[8],
       description: row[9],
       ingredients: row[10],
-      n_ingredients: row[11].to_i,
-      rec: row[12].to_i
+      n_ingredients: row[11].to_i
     )
+    if Recipe.count > 1000
+      break
     end
   end
+end
 end

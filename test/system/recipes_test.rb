@@ -14,7 +14,6 @@ class RecipesTest < ApplicationSystemTestCase
     visit recipes_url
     click_on "New Recipe"
 
-    fill_in "Contributor", with: @recipe.contributor_id
     fill_in "Description", with: @recipe.description
     fill_in "Id", with: @recipe.id
     fill_in "Ingredients", with: @recipe.ingredients
@@ -27,6 +26,7 @@ class RecipesTest < ApplicationSystemTestCase
     fill_in "Steps", with: @recipe.steps
     fill_in "Submitted", with: @recipe.submitted
     fill_in "Tags", with: @recipe.tags
+    fill_in "User", with: @recipe.user_id
     click_on "Create Recipe"
 
     assert_text "Recipe was successfully created"
@@ -37,7 +37,6 @@ class RecipesTest < ApplicationSystemTestCase
     visit recipes_url
     click_on "Edit", match: :first
 
-    fill_in "Contributor", with: @recipe.contributor_id
     fill_in "Description", with: @recipe.description
     fill_in "Id", with: @recipe.id
     fill_in "Ingredients", with: @recipe.ingredients
@@ -50,6 +49,7 @@ class RecipesTest < ApplicationSystemTestCase
     fill_in "Steps", with: @recipe.steps
     fill_in "Submitted", with: @recipe.submitted
     fill_in "Tags", with: @recipe.tags
+    fill_in "User", with: @recipe.user_id
     click_on "Update Recipe"
 
     assert_text "Recipe was successfully updated"
