@@ -2,7 +2,7 @@ class Recipe < ApplicationRecord
 belongs_to :user, optional: true
 def self.search(search)
   if search
-    recipe = Recipe.find_by(name: search)
+    recipe = Recipe.where(name: search)
     if recipe
       self.where(name: recipe)
     else Recipe.take(10)

@@ -4,7 +4,7 @@ def index
 end
 
 def recipe_params
-  params.require(:recipe).permit(:name, :id, :minutes, :user_id, :submitted, :tags, :nutrition, :n_steps, :steps, :description, :ingredients, :n_ingredients, :rec, :search)
+  params.require(:recipe).permit(:name, :minutes, :user_id, :submitted, :tags, :nutrition, :n_steps, :steps, :description, :ingredients, :n_ingredients, :search)
 end
 
 end
