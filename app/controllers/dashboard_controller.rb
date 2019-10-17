@@ -2,11 +2,9 @@ class DashboardController < ApplicationController
   def index
 
     @recipes = Recipe.all.order(:minutes)
-    @interactions = Interection.all
     @users = User.all.order(:created_at)
 
     @recipescount = Recipe.all.count
-    @interactionscount = Interection.all.count
     @userscount = User.all.count
 
     @users = @users.group_by {|u| u.created_at.strftime("%F")}
