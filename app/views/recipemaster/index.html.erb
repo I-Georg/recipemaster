@@ -1,5 +1,16 @@
 Welcome to Recipe Master
 
+<%= form_tag(root_path, method: :get) do%>
+<%= text_field_tag(:search, params[:search])%>
+<%= submit_tag ('Search')%>
+<%end%>
+
+<%@recipes.each do |recipe|%>
+<ul>
+  <li><%=recipe.name%></li>
+</ul>
+<%end%>
+
 <p>WORD CLOUD</p>
 
 
