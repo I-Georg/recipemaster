@@ -1,7 +1,31 @@
-Welcome to Recipe Master
+<h1>Welcome to Recipe Master</h1>
 <!-- source: https://www.w3schools.com/howto/howto_js_slideshow.asp -->
 <!--https://www.w3schools.com/howto/howto_js_slideshow.asp-->
+
+<link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet"> 
+
+<%= form_tag('/', :method => "get") do %>
+  <%= label_tag(:q, "Recipe1:") %>
+  <%= text_field_tag(:q) %>
+  <%= label_tag(:y, "Recipe2:") %>
+  <%= text_field_tag(:y) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<%@recipe1.each do |r|%>
+<%=r.name%>
+<%=r.n_steps%>
+<%end%>
+<p>-----------------------------------</p>
+<%@recipe2.each do |r|%>
+<%=r.name%>
+<%=r.n_steps%>
+<%end%>
+
 <style>
+ .h1 {
+font-family: 'Satisfy', cursive;
+}
 * {box-sizing: border-box;}
 body {font-family: Verdana, sans-serif;}
 .mySlides {display: none;}
