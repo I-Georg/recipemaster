@@ -18,6 +18,7 @@ var lmap = L.map('mapid').setView([51.505, -0.09],1);
 
 <% @users.each do |user|%>
  marker<%=escape_javascript user.id%> = L.marker([<%=escape_javascript user.lat%>, <%=escape_javascript user.lng%>]).addTo(lmap);
+ marker<%=escape_javascript user.id%>.bindPopup('<p>Name: <u><%=escape_javascript user.name%></u><br />Total number of recipes submitted: <b><%=escape_javascript (Recipe.where(contributor_id: user.id)).count%></b>');
 <%end%>
 
 </script>
