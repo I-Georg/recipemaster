@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   get "/cocktails" => "livedata#index"
   get "/maps" => "maps#index"
   get "/allrecipes" => "recipes#index"
+  get "/allrecipes/json" => "recipes#jsondata"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
