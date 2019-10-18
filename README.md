@@ -11,6 +11,8 @@ This application was created as part of Advanced Web Application Development cou
 * Leaflet
 * Bootstrap
 * Webpacker
+* pagy
+* Unirest
 ## Database creation
 Database is created by creating a number of users using Faker and importing recipe data from a CSV file and
 ### Complete DB creation process

@@ -1,5 +1,6 @@
 require 'unirest'
 class LivedataController < ApplicationController
+  #api obtained from https://rapidapi.com/theapiguy/api/the-cocktail-db/details
 def index
   @response1 = Unirest.get "https://the-cocktail-db.p.rapidapi.com/random.php",
   headers:{
