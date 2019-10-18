@@ -10,9 +10,8 @@ class RecipesController < ApplicationController
   def jsondata
     @recipes = Recipe.all
     @recipelist = @recipes.each do |r|
-      { :name => r.name, :minutes => r.minutes, :submitted => r.submitted, :tags => r.tags, :nutrition => r.nutrition, :n_steps => r.n_steps, :steps => r.steps, :description => r.description, :ingredients => r.ingredients, :n_ingredients => r.n_ingredients, :contributor_id => r.contributor_id}
+      {:name => r.name, :minutes => r.minutes, :submitted => r.submitted, :tags => r.tags, :nutrition => r.nutrition, :n_steps => r.n_steps, :steps => r.steps, :description => r.description, :ingredients => r.ingredients, :n_ingredients => r.n_ingredients, :contributor_id => r.contributor_id}
     end
-    render :json => @recipelist
+    render :json => {:data => @recipelist}
   end
-
-end
+  end
