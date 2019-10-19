@@ -4,7 +4,7 @@ namespace :recipes do
   task import: :environment do
  	Recipe.destroy_all
   p 'Reading the file, this might take a while'
-  csv = CSV.read(Rails.root.join('lib','assets', 'RAW_recipes.csv'), :headers =>true)
+  csv = CSV.read(Rails.root.join('lib', 'assets', 'RAW_recipes.csv'), :headers =>true)
   #extract unique contributor ids and put them into an array of all unique ids
   arrid = []
    csv.each do |row|
@@ -17,7 +17,7 @@ namespace :recipes do
    skipids = arrid - result
 
   p 'Beginning import'
-	CSV.foreach(Rails.root / 'lib' / 'assets' / 'RAW_recipes.csv', :headers =>true) do |row|
+	CSV.foreach(Rails.root.join('lib', 'assets', 'RAW_recipes.csv'), :headers =>true) do |row|
       if skipids.include?(row[3].to_i)
         p 'User doesn\'t exist for this recipe; skipping'
         next
