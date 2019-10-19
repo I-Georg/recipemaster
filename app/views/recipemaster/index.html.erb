@@ -5,22 +5,23 @@
 <link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet"> 
 
 <%= form_tag('/', :method => "get") do %>
-  <%= label_tag(:q, "Recipe1:") %>
+  <%= label_tag(:q, "Number of ingredients:") %>
   <%= text_field_tag(:q) %>
-  <%= label_tag(:y, "Recipe2:") %>
+  <%= label_tag(:y, "Number of steps:") %>
   <%= text_field_tag(:y) %>
   <%= submit_tag("Search") %>
 <% end %>
 
+
+
+
 <%@recipe1.each do |r|%>
 <%=r.name%>
 <%=r.n_steps%>
+<%=r.n_ingredients%>
 <%end%>
-<p>-----------------------------------</p>
-<%@recipe2.each do |r|%>
-<%=r.name%>
-<%=r.n_steps%>
-<%end%>
+
+
 
 <style>
  .h1 {

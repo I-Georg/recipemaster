@@ -1,8 +1,6 @@
 class RecipemasterController < ApplicationController
 def index
-@recipe1 = Recipe.where("n_ingredients = ?", params[:q]).take(2)
-@recipe2 = Recipe.where("n_ingredients = ?", params[:y]).take(2)
-
+@recipe1 = Recipe.where("n_ingredients = ? AND n_steps = ?", params[:q], params[:y])
 
 end
  
