@@ -5,27 +5,40 @@
 
 
 
-
-<b><%=@response1.body["drinks"][0]["strDrink"]%></b><br> <!--parsed json has a single key drinks that has one array -->
-<img src="<%=@response1.body["drinks"][0]["strDrinkThumb"]%>" />
+<div class="row">
+  <div class="column" >
+<b><%=@response1.body["drinks"][0]["strDrink"]%></center></b><br><br> <!--parsed json has a single key drinks that has one array -->
+<p style="float: left;"><img src="<%=@response1.body["drinks"][0]["strDrinkThumb"]%> "height="300px" width="300px"border="1px"<p/>
 <p><%=@response1.body["drinks"][0]["strInstructions"]%></p>
-
+</div><br><br>
+</div>
+<div class="row">
+  <div class="column" >
 <b><%=@response2.body["drinks"][0]["strDrink"]%></b><br> <!--parsed json has a single key drinks that has one array -->
-<img src="<%=@response2.body["drinks"][0]["strDrinkThumb"]%>" />
+<img src="<%=@response2.body["drinks"][0]["strDrinkThumb"]%>" height="300" width="300"/>
 <p><%=@response2.body["drinks"][0]["strInstructions"]%></p>
-
+</div><br><br>
+</div>
+<div class="row">
+  <div class="column" >
 <b><%=@response3.body["drinks"][0]["strDrink"]%></b><br> <!--parsed json has a single key drinks that has one array -->
-<img src="<%=@response3.body["drinks"][0]["strDrinkThumb"]%>" />
-<p><%=@response3.body["drinks"][0]["strInstructions"]%></p>
-
+<img src="<%=@response3.body["drinks"][0]["strDrinkThumb"]%>" height="300" width="300"/>
+<p><%=@response3.body["drinks"][0]["strInstructions"]%></p></div><br><br>
+</div>
+<div class="row">
+  <div class="column" >
 <b><%=@response4.body["drinks"][0]["strDrink"]%></b><br> <!--parsed json has a single key drinks that has one array -->
-<img src="<%=@response4.body["drinks"][0]["strDrinkThumb"]%>" />
+<img src="<%=@response4.body["drinks"][0]["strDrinkThumb"]%>"height="300" width="300" />
 <p><%=@response4.body["drinks"][0]["strInstructions"]%></p>
-
+</div><br><br>
+</div>
+<div class="row">
+  <div class="column" >
 <b><%=@response5.body["drinks"][0]["strDrink"]%></b><br> <!--parsed json has a single key drinks that has one array -->
-<img src="<%=@response5.body["drinks"][0]["strDrinkThumb"]%>" />
+<img src="<%=@response5.body["drinks"][0]["strDrinkThumb"]%>" height="300" width="300"/>
 <p><%=@response5.body["drinks"][0]["strInstructions"]%></p>
-
+</div><br><br>
+</div>
 <!-- response.body reference
 
 
