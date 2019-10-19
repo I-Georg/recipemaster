@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Recipe:</strong>
+  <%= @resipe.recipe_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @resipe.name %>
+</p>
+
+<p>
+  <strong>Minutes:</strong>
+  <%= @resipe.minutes %>
+</p>
+
+<p>
+  <strong>Contributor:</strong>
+  <%= @resipe.contributor_id %>
+</p>
+
+<p>
+  <strong>Sub,itted:</strong>
+  <%= @resipe.sub,itted %>
+</p>
+
+<p>
+  <strong>Tags:</strong>
+  <%= @resipe.tags %>
+</p>
+
+<p>
+  <strong>Nutrition:</strong>
+  <%= @resipe.nutrition %>
+</p>
+
+<p>
+  <strong>N steps:</strong>
+  <%= @resipe.n_steps %>
+</p>
+
+<p>
+  <strong>Integer:</strong>
+  <%= @resipe.integer %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @resipe.description %>
+</p>
+
+<p>
+  <strong>Ingredients:</strong>
+  <%= @resipe.ingredients %>
+</p>
+
+<p>
+  <strong>N ingredients:</strong>
+  <%= @resipe.n_ingredients %>
+</p>
+
+<p>
+  <strong>Rec:</strong>
+  <%= @resipe.rec %>
+</p>
+
+<%= link_to 'Edit', edit_resipe_path(@resipe) %> |
+<%= link_to 'Back', resipes_path %>

@@ -16,5 +16,11 @@ class DashboardController < ApplicationController
     @recipes = @recipes.group_by {|u| "#{(u.minutes / 60 + 1)} hours"}
     @recipe_hours = @recipes.keys
     @recipe_counts = @recipes.values.map(&:length)
+
+    @recipe_tags = Recipe.statistics(:tags)
+    @recipe_nutrition = Recipe.statistics(:nutrition)
+    @recipe_ingredient = Recipe.statistics(:ingredients)
+
+    @recipe_step = Recipe.statistics(:steps)
   end
 end

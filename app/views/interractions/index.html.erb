@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Interractions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Recipe</th>
+      <th>Date</th>
+      <th>Rating</th>
+      <th>Review</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @interractions.each do |interraction| %>
+      <tr>
+        <td><%= interraction.user_id %></td>
+        <td><%= interraction.recipe_id %></td>
+        <td><%= interraction.date %></td>
+        <td><%= interraction.rating %></td>
+        <td><%= interraction.review %></td>
+        <td><%= link_to 'Show', interraction %></td>
+        <td><%= link_to 'Edit', edit_interraction_path(interraction) %></td>
+        <td><%= link_to 'Destroy', interraction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Interraction', new_interraction_path %>
