@@ -1,5 +1,5 @@
 # README
-This application was created as part of Advanced Web Application Development course. ...
+This application was created as part of Advanced Web Application Development course at University of Aberdeen. A live version of the application is available at https://rocky-lake-33810.herokuapp.com
 ## Ruby version
 * 2.6.4
 ## Rails version
@@ -11,11 +11,13 @@ This application was created as part of Advanced Web Application Development cou
 * Leaflet
 * Bootstrap
 * Webpacker
-* pagy
 * Unirest
-## Database creation
-Database is created by creating a number of users using Faker and importing recipe data from a CSV file and
-### Complete DB creation process
+## Running application locally
+* Run bundle install
+* Ensure that /lib/assets contains the RAW_recipes.csv file
+* Create the database (the process is explained below)
+* Access the application using http://localhost:3000
+### Database creation process
 1. Migrate the database schema
   * rails db:migrate
 2. Create users and assign them unique ids taken from recipes CSV file
@@ -23,9 +25,9 @@ Database is created by creating a number of users using Faker and importing reci
   * rake users:grab_ids
 4. Import recipes from CSV file, skipping rows that contain contributor_ids not found in the database
   * rake recipes:import ---- _the entire CSV file gets read, so expect this process to be quite lengthy_
-## Deployment instructions
-HEROKU DEPLOYMENT GOES HERE
 ## The team behind this Application
-* Nikita Romanenko (https://github.com/Sashfish)
-* Ilina Georgieva (https://github.com/I-Georg)
-* Wendong Guo (https://github.com/Clark1Guo)
+* Nikita Romanenko (https://github.com/Sashfish) - StudentID:
+* Ilina Georgieva (https://github.com/I-Georg)   - StudentID:
+* Wendong Guo (https://github.com/Clark1Guo)     - StudentID:
+## Parts that are not working correctly
+* ...
