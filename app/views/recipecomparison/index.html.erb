@@ -2,7 +2,9 @@
 <p>Enter the number of steps and number of ingredients of the recipes you wish to compare</p>
 
 
-
+<@ingredients.each do |i|%>
+<%=i%>
+<%end>
 
 <%= form_tag('/recipecomparison', :method => "get") do %>
  <%= label_tag(:q, "Number of ingredients,Recipe1:") %>

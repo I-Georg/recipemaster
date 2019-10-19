@@ -9,4 +9,5 @@ namer2 = '%'+params[:name2]+'%'
 
 end
 end
+@ingredients = Recipe.find(:ingredients).take(2)
 end
