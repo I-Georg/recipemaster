@@ -15,7 +15,7 @@ end
 desc "grab user_id from recipes"
 task grab_ids: :environment do
   p 'Reading the file, this might take a while'
-   csv = CSV.read(Rails.root.join('lib', 'assets', 'RAW_recipes.csv'), :headers =>true)
+   csv = CSV.read(Rails.root.join('.', 'lib', 'assets', 'RAW_recipes.csv'), :headers =>true)
    #extract unique contributor ids and put them into an array
    arrid = []
     ua =[]
