@@ -1,6 +1,6 @@
 require 'faker'
 namespace :users do
-  usrnum = 50 #adjust this number to create the desired number of users
+  usrnum = 30 #adjust this number to create the desired number of users; note - only a small number was selected to accomodate heroku's limit on db size
   desc "Create users and address using Faker,plugging each user with user_id from Recipes"
   task create: :environment do
   #create users
