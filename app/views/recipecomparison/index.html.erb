@@ -1,25 +1,20 @@
 <h1>Recipe comparison</h1>
-<p>Enter the number of steps and number of ingredients of the recipes you wish to compare</p>
+<h2>Here is the place where you can compare recipes based on the number of steps and
+ingredients.<br><i> Enter the number of steps and number of ingredients and the name of the ingredient of the recipes you wish to compare: </i></h2>
+<br>
 
-
-<@ingredients.each do |i|%>
-<%=i%>
-<%end>
-
-<%= form_tag('/recipecomparison', :method => "get") do %>
+<%= form_tag('/displaycomparison', :method => "get") do %>
  <%= label_tag(:q, "Number of ingredients,Recipe1:") %>
 <%= text_field_tag(:q) %><br>
   <%= label_tag(:y, "Number of steps,Recipe1:") %>
 <%= text_field_tag(:y) %><br>
 <%= label_tag(:name1, "Enter name/ingredient,Recipe1:") %>
 <%= text_field_tag(:name1) %><br>
-  
-
-<%= label_tag(:x, "Number of ingredients,Recipe1:") %>
+<%= label_tag(:x, "Number of ingredients,Recipe2:") %>
 <%= text_field_tag(:x) %><br>
   <%= label_tag(:z, "Number of steps,Recipe2:") %> 
 <%= text_field_tag(:z) %><br>
-<br><%= label_tag(:name2, "Enter name/ingredient,Recipe2:") %>
+<%= label_tag(:name2, "Enter name/ingredient,Recipe2:") %>
 <%= text_field_tag(:name2) %><br>
  
  <br> <%= submit_tag("Search") %></br>
@@ -27,48 +22,4 @@
 <br>
 
 
-<table class="table">
-  <thead>
- 
-      
-    <tr>
-      <th scope="col">Recipe details</th>
-      
-     
-     
-      
-    </tr>
-  </thead>
-  <tbody>
-<% if params[:name1] && params[:name2] != nil %>
-    <%@recipex.each do |ro|%>
 
-    <tr>
-      <td>Name</td>
-      <td><%=ro.name%></td>
-      
-     
-    </tr>
-    <tr>
-      <td>Number of steps</td>
-      <td><%=ro.n_steps%></td>
-      
-     
-    </tr>
-    <tr>
-      <td>Number of ingredients</td>
-      <td><%=ro.n_ingredients%></td>
-   <%end%>
-<br>
-     <tbody>
-  Recipe 2
-<br><%@recipe2.each do |r|%>
-<td><%=r.name%></td>
-<td><%=r.n_steps%></td>
- <td><%=r.n_ingredients%></td>
-    </tr>
-
-<%end%>
-<%end%>
-  </tbody>
-</table>
