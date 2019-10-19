@@ -3,7 +3,7 @@ namespace :recipes_test do
   desc "seeding recipe table with 200 records for testing purposes"
   task recipes: :environment do
 Recipe.destroy_all
-CSV.foreach("lib/assets/RAW_recipes.csv", :headers =>true) do |row |
+CSV.foreach(Rails.root / 'lib' / 'assets' / 'RAW_recipes.csv', :headers =>true) do |row |
       puts row.inspect #just so that we know the file's being read
       #create new model instances with the data
 Recipe.create!(
