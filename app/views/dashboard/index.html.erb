@@ -18,7 +18,7 @@
       var option = setOptions(titles[i], keys, values, colors[i]);
       chart.setOption(option);
     }
-  }
+  });
 
   function setOptions(title, keys, values, color) {
     if(color === undefined || color === null) {
@@ -55,7 +55,7 @@
     };
     recipeChart.setOption(option);
     return options;
-  }
+  };
 
 
 </script>

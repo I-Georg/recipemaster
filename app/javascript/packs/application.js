@@ -9,6 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 require("jquery")
 require("echarts")
+
 //require("jqcloud")
 import './jquery.easy-autocomplete.js'
 import './jqcloud-1.0.4.js'
@@ -19,6 +20,7 @@ import '../stylesheets/application'
 import './bootstrap_custom.js'
 import Echarts from 'echarts'
 window.Echarts = Echarts
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
