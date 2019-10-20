@@ -33,4 +33,4 @@ This application was created as part of Advanced Web Application Development cou
 ## Parts that are not working correctly
 * jQCloud was not implemented due to the time constraint
 * Maps and search required a page refresh to work correctly
-* ...
+* ... .
