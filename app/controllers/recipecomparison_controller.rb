@@ -17,16 +17,19 @@ Recipe.all.each do |i|
     
 end
 end
+
  def displaycomparison
-if params[:name1] && params[:name2] != nil
-namer1 = '%'+params[:name1]+'%'
-@recipex = Recipe.where("n_ingredients = ? AND n_steps = ? AND name LIKE ?", params[:q], params[:y], namer1)
+#https://gorails.com/episodes/global-autocomplete-search
+#https://stackoverflow.com/questions/58232844/rails-6-jbuilder-not-rendering-array-properly
 
-namer2 = '%'+params[:name2]+'%'
-@recipe2 = Recipe.where("n_ingredients = ? AND n_steps = ? AND name LIKE ?", params[:x], params[:z], namer2)
+@recipex = Recipe.all.ransack(name_cont: params[:q]).result(distinct: true).limit(7)
+@recipey = Recipe.all.ransack(name_cont: params[:q]).result(distinct: true).limit(7)
+ respond_to do |format|
+      format.html {
+      }
+      format.json {render recipex: @recipex, recipey: @recipey }
 end
 end
-
 #https://gorails.com/episodes/global-autocomplete-search
 #https://stackoverflow.com/questions/58232844/rails-6-jbuilder-not-rendering-array-properly
 def search 

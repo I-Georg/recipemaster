@@ -9,15 +9,14 @@ partial: 'recipey/recipey',
 
  <!-- https://gorails.com/episodes/global-autocomplete-search 
 -->
-<h1> Welcome to advanced autocomplete comparison search</h1><br>
-<h3> Enter and choose from the autocompleted recipes and click on Search and compare in order to see the results<h2><br>
-
-
+<h1> Advanced recipe comparison</h1>
+<h3> Enter a word and let our autocomplete to help you compare recipes</h3><br>
 <%=form_tag('/recipecomparison/display', method: :get) do%>
 <%=text_field_tag 'q', nil, placeholder: ''%>
 <%=text_field_tag 'z', nil, placeholder: ''%>
 <%=submit_tag ('Search and compare')%>
 <%end%>
+
 
 <script>
 //source https://github.com/gorails-screencasts/gorails-episode-192/blob/master/app/assets/javascripts/search.js
@@ -38,25 +37,7 @@ url: "/recipecomparison/search.json",
 	}
 };
 
-var options2 = {
-	
-	
-	getValue: "name",
-url: "/recipecomparison/search.json",
-
- url: function(phrase) {
-      return "/recipecomparison/search.json?z=" + phrase;
-    },
-
-	list: {
-		match: {
-			enabled: true
-		}
-	}
-};
-
-
 $("#q").easyAutocomplete(options);
-$("#z").easyAutocomplete(options2);
+$("#z").easyAutocomplete(options);
 </script>
 
