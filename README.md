@@ -29,6 +29,6 @@ This application was created as part of Advanced Web Application Development cou
 ## The team behind this Application
 * Nikita Romanenko (https://github.com/Sashfish) - StudentID: 51881316
 * Ilina Georgieva (https://github.com/I-Georg)   - StudentID: 51881868
-* Wendong Guo (https://github.com/Clark1Guo)     - StudentID: 5188XXXX
+* Wendong Guo (https://github.com/Clark1Guo)     - StudentID: 51881838
 ## Parts that are not working correctly
-* ...
+* jQCloud was not implemented due to the time constraint
