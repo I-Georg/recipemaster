@@ -1,4 +1,3 @@
-<div id = 'container'></div>
 <div id="user-chart" class="dashboard-chart" data-keys="<%= @user_dates %>" data-values="<%= @user_counts %>"></div>
 <div id="recipe-chart" class="dashboard-chart" data-keys="<%= @recipe_hours %>" data-values="<%= @recipe_counts %>"></div>
 <div id="recipe-tag-chart" class="dashboard-chart" data-keys="<%= @recipe_tags.keys %>" data-values="<%= @recipe_tags.values %>"></div>
@@ -19,7 +18,7 @@
       var option = setOptions(titles[i], keys, values, colors[i]);
       chart.setOption(option);
     }
-  })
+  }
 
   function setOptions(title, keys, values, color) {
     if(color === undefined || color === null) {
@@ -54,14 +53,9 @@
           type: 'bar'
       }]
     };
-    recipeChart.setOption(option)
-  })
-
-    }
+    recipeChart.setOption(option);
     return options;
   }
-
-
 
 
 </script>
