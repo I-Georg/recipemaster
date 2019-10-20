@@ -1,0 +1,47 @@
+
+<!--https://stackoverflow.com/questions/58232844/rails-6-jbuilder-not-rendering-array-properly  same source for search.json.builder-->
+<!--json.array! @recipex
+partial: 'recipex/recipex',
+            as: :recipex
+json.array! @recipey
+partial: 'recipey/recipey',
+            as: :recipey  -->
+
+ <!-- https://gorails.com/episodes/global-autocomplete-search 
+<form action = "/recipecomparison/search" method = "get">
+<input id="q" />
+<button type = "submit">Search and Compare</button>-->
+
+<%=form_tag('/recipecomparison/search', method: :get) do%>
+<%=text_field_tag 'q', nil, placeholder: ''%>
+<%=submit_tag ('Search and compare')%>
+<%end%>
+
+<%@recipex.each do |r|%>
+<b>Recipe name: <%=r.name%><br>
+<b>Ingredients: <%=r.ingredients%><br>
+<b>Number of steps: <%=r.n_steps%><br>
+<b>Number of ingredients: <%=r.n_ingredients%>
+<%end%>
+<script>
+//source https://github.com/gorails-screencasts/gorails-episode-192/blob/master/app/assets/javascripts/search.js
+var options = {
+	
+	
+	getValue: "name",
+url: "/recipecomparison/search.json",
+
+ url: function(phrase) {
+      return "/recipecomparison/search.json?q=" + phrase;
+    },
+
+	list: {
+		match: {
+			enabled: true
+		}
+	}
+};
+
+$("#q").easyAutocomplete(options);
+</script>
+
