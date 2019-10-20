@@ -1,0 +1,63 @@
+<table class="table">
+  <thead>
+ 
+      
+    <tr>
+      <th scope="col">Recipe1 options</th>
+      
+     
+     
+      
+    </tr>
+  </thead>
+  <tbody>
+<% if params[:name1] && params[:name2] != nil %>
+    <%@recipex.each do |ro|%>
+
+    <tr>
+      <td>Name</td>
+      <td><%=ro.name%></td>
+      
+     
+    </tr>
+    <tr>
+      <td>Number of steps</td>
+      <td><%=ro.n_steps%></td>
+      
+     
+    </tr>
+    <tr>
+      <td>Number of ingredients</td>
+      <td><%=ro.n_ingredients%></td>
+   <%end%>
+</tbody>
+</table>
+<br>
+<table class="table">
+ <thead>
+     
+  <th scope="col"><b>Recipe2 options</b></th>
+ </thead>
+     <tbody>
+<br><%@recipe2.each do |r|%>
+ <tr>
+      <td>Name</td>
+      <td><%=r.name%></td>
+      
+     
+    </tr>
+    <tr>
+      <td>Number of steps</td>
+      <td><%=r.n_steps%></td>
+      
+     
+    </tr>
+    <tr>
+      <td>Number of ingredients</td>
+      <td><%=r.n_ingredients%></td>
+    </tr>
+
+<%end%>
+<%end%>
+  </tbody>
+</table>
