@@ -13,8 +13,8 @@ end
 Recipe.all.each do |i|
  t = i.ingredients
  t.delete!('[]\'')
-@ing= t.split(', ') # recipe1 array = [ing1,ing2,ing3...] 
-    
+@ing= t.split(', ') # recipe1 array = [ing1,ing2,ing3...]
+
 end
 end
 
@@ -23,7 +23,7 @@ end
 #https://stackoverflow.com/questions/58232844/rails-6-jbuilder-not-rendering-array-properly
 
 @recipex = Recipe.all.ransack(name_cont: params[:q]).result(distinct: true).limit(7)
-@recipey = Recipe.all.ransack(name_cont: params[:q]).result(distinct: true).limit(7)
+@recipey = Recipe.all.ransack(name_cont: params[:z]).result(distinct: true).limit(7)
  respond_to do |format|
       format.html {
       }
@@ -32,14 +32,14 @@ end
 end
 #https://gorails.com/episodes/global-autocomplete-search
 #https://stackoverflow.com/questions/58232844/rails-6-jbuilder-not-rendering-array-properly
-def search 
+def search
 @recipex = Recipe.all.ransack(name_cont: params[:q]).result(distinct: true).limit(7)
-@recipey = Recipe.all.ransack(name_cont: params[:q]).result(distinct: true).limit(7)
+@recipey = Recipe.all.ransack(name_cont: params[:z]).result(distinct: true).limit(7)
  respond_to do |format|
       format.html {
       }
       format.json {render recipex: @recipex, recipey: @recipey }
-      
+
 end
 #format.json {render json: @recipex }
 #render :json => {:recipex => @recipex}
@@ -50,18 +50,17 @@ end
 #{:recipex.to_json(only: %i[name]),@recipey.to_json(only: %i[name])
 
 
-             
+
 end
 def display
 @recipex = Recipe.all.ransack(name_cont: params[:q]).result(distinct: true).limit(7)
-@recipey = Recipe.all.ransack(name_cont: params[:q]).result(distinct: true).limit(7)
+@recipey = Recipe.all.ransack(name_cont: params[:z]).result(distinct: true).limit(7)
  respond_to do |format|
       format.html {
       }
       format.json {render recipex: @recipex, recipey: @recipey }
-      
+
 end
 end
 
  end
-
