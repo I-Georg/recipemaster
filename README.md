@@ -1,5 +1,5 @@
 # README
-This application was created as part of Advanced Web Application Development course at University of Aberdeen. A live version of the application is available at https://rocky-lake-33810.herokuapp.com
+This application was created as part of Advanced Web Application Development course at University of Aberdeen. A live version of the application is available at http://rocky-lake-33810.herokuapp.com (NOTE: accesing the app via https:// breaks the maps, use http:// instead)
 ## Ruby version
 * 2.6.4
 ## Rails version
