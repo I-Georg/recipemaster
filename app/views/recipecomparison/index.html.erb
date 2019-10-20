@@ -2,6 +2,10 @@
 <h2>Here is the place where you can compare recipes based on the number of steps and
 ingredients.<br><i> Enter the number of steps and number of ingredients and the name of the ingredient of the recipes you wish to compare: </i></h2>
 <br>
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+
+<%=@ing[1]%>
+
 
 <%= form_tag('/displaycomparison', :method => "get") do %>
  <%= label_tag(:q, "Number of ingredients,Recipe1:") %>

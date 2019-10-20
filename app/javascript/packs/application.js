@@ -10,6 +10,7 @@ require("channels")
 require("jquery")
 require("echarts")
 //require("jqcloud")
+import './jquery.easy-autocomplete.js'
 import './jqcloud-1.0.4.js'
 
 import Highcharts from "highcharts"
