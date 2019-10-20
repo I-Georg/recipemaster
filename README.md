@@ -1,5 +1,5 @@
 # README
-This application was created as part of Advanced Web Application Development course at University of Aberdeen. A live version of the application is available at http://rocky-lake-33810.herokuapp.com (NOTE: accesing the app via https:// breaks the maps, use http:// instead)
+This application was created as part of Advanced Web Application Development course at University of Aberdeen. A live version of the application is available at http://rocky-lake-33810.herokuapp.com (NOTE: accessing the app via https:// breaks the maps, use http:// instead)
 ## Ruby version
 * 2.6.4
 ## Rails version
@@ -12,6 +12,7 @@ This application was created as part of Advanced Web Application Development cou
 * Bootstrap
 * Webpacker
 * Unirest
+* EasyAutocomplete
 ## Running application locally
 * Run bundle install
 * Ensure that /lib/assets contains the RAW_recipes.csv file
@@ -26,8 +27,8 @@ This application was created as part of Advanced Web Application Development cou
 4. Import recipes from CSV file, skipping rows that contain contributor_ids not found in the database
   * rake recipes:import ---- _the entire CSV file gets read, so expect this process to be quite lengthy_
 ## The team behind this Application
-* Nikita Romanenko (https://github.com/Sashfish) - StudentID:
-* Ilina Georgieva (https://github.com/I-Georg)   - StudentID:
-* Wendong Guo (https://github.com/Clark1Guo)     - StudentID:
+* Nikita Romanenko (https://github.com/Sashfish) - StudentID: 51881316
+* Ilina Georgieva (https://github.com/I-Georg)   - StudentID: 51881868
+* Wendong Guo (https://github.com/Clark1Guo)     - StudentID: 5188XXXX
 ## Parts that are not working correctly
 * ...

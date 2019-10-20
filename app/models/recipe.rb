@@ -1,6 +1,5 @@
 class Recipe < ApplicationRecord
 belongs_to :user, optional: true
-serialize :tags, Array
 
 def self.search(search)
   if search
