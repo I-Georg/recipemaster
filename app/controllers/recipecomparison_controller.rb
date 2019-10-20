@@ -35,10 +35,10 @@ def search
  respond_to do |format|
       format.html {
       }
-      format.json { 
-        render json: @recipex
-      }
+      format.json {render recipex: @recipex, recipey: @recipey }
+      
 end
+#format.json {render json: @recipex }
 #render :json => {:recipex => @recipex}
                 # :recipey => @recipey}
 
@@ -49,7 +49,16 @@ end
 
              
 end
-
+def display
+@recipex = Recipe.all.ransack(name_cont: params[:q]).result(distinct: true).limit(7)
+@recipey = Recipe.all.ransack(name_cont: params[:q]).result(distinct: true).limit(7)
+ respond_to do |format|
+      format.html {
+      }
+      format.json {render recipex: @recipex, recipey: @recipey }
+      
+end
+end
 
  end
 

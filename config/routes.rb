@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 resources :recipes, param: :recipe_id
 get '/displaycomparison' => 'recipecomparison#displaycomparison'
 get '/recipecomparison/search.json' => 'recipecomparison#search'
+get '/recipecomparison/display' => 'recipecomparison#display'
   get 'recipemaster/index'
   root 'recipemaster#index'
   get "/dashboard" => "dashboard#index"

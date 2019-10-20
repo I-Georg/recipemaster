@@ -8,21 +8,17 @@ partial: 'recipey/recipey',
             as: :recipey  -->
 
  <!-- https://gorails.com/episodes/global-autocomplete-search 
-<form action = "/recipecomparison/search" method = "get">
-<input id="q" />
-<button type = "submit">Search and Compare</button>-->
+-->
+<h1> Welcome to advanced autocomplete comparison search</h1><br>
+<h3> Enter and choose from the autocompleted recipes and click on Search and compare in order to see the results<h2><br>
 
-<%=form_tag('/recipecomparison/search', method: :get) do%>
+
+<%=form_tag('/recipecomparison/display', method: :get) do%>
 <%=text_field_tag 'q', nil, placeholder: ''%>
+<%=text_field_tag 'z', nil, placeholder: ''%>
 <%=submit_tag ('Search and compare')%>
 <%end%>
 
-<%@recipex.each do |r|%>
-<b>Recipe name: <%=r.name%><br>
-<b>Ingredients: <%=r.ingredients%><br>
-<b>Number of steps: <%=r.n_steps%><br>
-<b>Number of ingredients: <%=r.n_ingredients%>
-<%end%>
 <script>
 //source https://github.com/gorails-screencasts/gorails-episode-192/blob/master/app/assets/javascripts/search.js
 var options = {
@@ -42,6 +38,25 @@ url: "/recipecomparison/search.json",
 	}
 };
 
+var options2 = {
+	
+	
+	getValue: "name",
+url: "/recipecomparison/search.json",
+
+ url: function(phrase) {
+      return "/recipecomparison/search.json?z=" + phrase;
+    },
+
+	list: {
+		match: {
+			enabled: true
+		}
+	}
+};
+
+
 $("#q").easyAutocomplete(options);
+$("#z").easyAutocomplete(options2);
 </script>
 

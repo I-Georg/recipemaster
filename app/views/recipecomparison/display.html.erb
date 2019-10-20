@@ -1,0 +1,17 @@
+<h1> Recipe Comparison </h1> <br>
+
+<b>Recipe1:</b><br>
+<%@recipex.each do |r|%>
+<b>Recipe name: <%=r.name%><br>
+<b>Ingredients: <%=r.ingredients%><br>
+<b>Number of steps: <%=r.n_steps%><br>
+<b>Number of ingredients: <%=r.n_ingredients%>
+<%end%><br> <br>
+
+<b>Recipe2:</b><br>
+<%@recipey.each do |ro|%>
+<b>Recipe name: <%=ro.name%><br>
+<b>Ingredients: <%=ro.ingredients%><br>
+<b>Number of steps: <%=ro.n_steps%><br>
+<b>Number of ingredients: <%=ro.n_ingredients%>
+<%end%>
