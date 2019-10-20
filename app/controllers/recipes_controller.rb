@@ -16,3 +16,15 @@ class RecipesController < ApplicationController
     render :json => {:data => @recipelist}
   end
   end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_recipe
+      @recipe = Recipe.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def recipe_params
+      params.require(:recipe).permit(:name, :id, :minutes, :contributor_id, :submitted, :tags, :nutrition, :n_steps, :steps, :description, :ingredients, :n_ingredients, :rec)
+    end
+end

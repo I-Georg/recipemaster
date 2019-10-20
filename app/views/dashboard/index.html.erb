@@ -1,91 +1,73 @@
 <div id = 'container'></div>
-<div id="user-chart" data-dates="<%= @user_dates.to_json %>" data-counts="<%= @user_counts %>"></div>
-<div id="recipe-chart" data-hours="<%= @recipe_hours.to_json %>" data-counts="<%= @recipe_counts %>"></div>
+<div id="user-chart" class="dashboard-chart" data-keys="<%= @user_dates %>" data-values="<%= @user_counts %>"></div>
+<div id="recipe-chart" class="dashboard-chart" data-keys="<%= @recipe_hours %>" data-values="<%= @recipe_counts %>"></div>
+<div id="recipe-tag-chart" class="dashboard-chart" data-keys="<%= @recipe_tags.keys %>" data-values="<%= @recipe_tags.values %>"></div>
+<div id="recipe-nutrition-chart" class="dashboard-chart" data-keys="<%= @recipe_nutrition.keys %>" data-values="<%= @recipe_nutrition.values %>"></div>
+<div id="recipe-ingredient-chart" class="dashboard-chart" data-keys="<%= @recipe_ingredient.keys %>" data-values="<%= @recipe_ingredient.values %>"></div>
+<div id="recipe-step-chart" class="dashboard-chart" data-keys="<%= @recipe_step.keys %>" data-values="<%= @recipe_step.values %>"></div>
 
 <script>
   $(document).on('turbolinks:load', function() {
-    var userChart = Echarts.init(document.getElementById('user-chart'));
-    var user_dates = $('#user-chart').data('dates');
-    var user_counts = $('#user-chart').data('counts');
+    var ids = ['user-chart', 'recipe-chart', 'recipe-tag-chart', 'recipe-nutrition-chart', 'recipe-ingredient-chart', 'recipe-step-chart'];
+    var titles = ['User created date', 'Movie total playing time', 'Recipe Tags', 'Recipe Nutrition', 'Recipe Ingredient', 'Recipe Steps']
+    var colors = [null, '#CC33FF', '#003366', '#660033', '#99FFCC', '#33CCFF'];
+    for(var i = 0; i < ids.length; i++) {
+      var chart = Echarts.init(document.getElementById(ids[i]));
+      var obj = $('#' + ids[i]);
+      var keys = obj.data('keys');
+      var values = obj.data('values');
+      var option = setOptions(titles[i], keys, values, colors[i]);
+      chart.setOption(option);
+    }
+  })
 
-    option = {
+  function setOptions(title, keys, values, color) {
+    if(color === undefined || color === null) {
+      color = '#C23531';
+    }
+    options = {
+      color: color,
       title: {
-                text: 'User created date'
+                text: title
               },
+      tooltip : {
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+      },
+      grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+      },
       xAxis: {
           type: 'category',
-          data: user_dates
+          data: keys
       },
       yAxis: {
           type: 'value'
       },
       series: [{
-          data: user_counts,
-          type: 'bar'
-      }]
-    };
-    userChart.setOption(option)
-
-
-    var recipeChart = Echarts.init(document.getElementById('recipe-chart'));
-    var recipe_dates = $('#recipe-chart').data('hours');
-    var recipe_counts = $('#recipe-chart').data('counts');
-
-    option = {
-      title: {
-                text: 'Movie total playing time'
-              },
-      xAxis: {
-          type: 'category',
-          data: recipe_dates
-      },
-      yAxis: {
-          type: 'value'
-      },
-      series: [{
-          data: recipe_counts,
+          data: values,
           type: 'bar'
       }]
     };
     recipeChart.setOption(option)
   })
 
+    }
+    return options;
+  }
 
 
 
 
-
-
-
-
-
-
-
-    // Highcharts.chart('container', {
-    //   chart: {
-    //         type: 'bar'
-    //       },
-    //       title: {
-    //         text: 'Database Statistics'
-    //       },
-    //       xAxis: {
-    //         categories: ['Recipes', 'Interactions', 'Users']
-    //       },
-    //       yAxis: {
-    //         title: {
-    //           text: 'Number of Records'
-    //         },
-    //         tickInterval: 1000,
-    //       },
-    //       series: [{
-    //         name: 'Number of Records',
-    //         data: [<%#= raw @userscount%>, <%#= raw @recipescount %>, <#%= raw @interactionscount%>]
-    //       }]
-    //       })
-    </script>
+</script>
 
     <style type="text/css">
-      #user-chart, #recipe-chart {
+      .dashboard-chart {
         height: 400px;
         width: 100%;
         margin-top: 40px;
