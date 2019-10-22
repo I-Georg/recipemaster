@@ -1,4 +1,4 @@
-<div id="user-chart" class="dashboard-chart" data-keys="<%= @user_dates %>" data-values="<%= @user_counts %>"></div>
+<!--<div id="user-chart" class="dashboard-chart" data-keys="<%= @user_dates %>" data-values="<%= @user_counts %>"></div>-->
 <div id="recipe-chart" class="dashboard-chart" data-keys="<%= @recipe_hours %>" data-values="<%= @recipe_counts %>"></div>
 <div id="recipe-tag-chart" class="dashboard-chart" data-keys="<%= @recipe_tags.keys %>" data-values="<%= @recipe_tags.values %>"></div>
 <div id="recipe-nutrition-chart" class="dashboard-chart" data-keys="<%= @recipe_nutrition.keys %>" data-values="<%= @recipe_nutrition.values %>"></div>
@@ -7,9 +7,9 @@
 
 <script>
   $(document).on('turbolinks:load', function() {
-    var ids = ['user-chart', 'recipe-chart', 'recipe-tag-chart', 'recipe-nutrition-chart', 'recipe-ingredient-chart', 'recipe-step-chart'];
-    var titles = ['User created date', 'Movie total playing time', 'Recipe Tags', 'Recipe Nutrition', 'Recipe Ingredient', 'Recipe Steps']
-    var colors = [null, '#CC33FF', '#003366', '#660033', '#99FFCC', '#33CCFF'];
+    var ids = [ 'recipe-chart', 'recipe-tag-chart', 'recipe-nutrition-chart', 'recipe-ingredient-chart', 'recipe-step-chart'];
+    var titles = [ 'Cooking Times', 'Recipe Tags', 'Recipe Nutrition', 'Recipe Ingredient', 'Recipe Steps']
+    var colors = ['#CC33FF', '#003366', '#660033', '#99FFCC', '#33CCFF'];
     for(var i = 0; i < ids.length; i++) {
       var chart = Echarts.init(document.getElementById(ids[i]));
       var obj = $('#' + ids[i]);
